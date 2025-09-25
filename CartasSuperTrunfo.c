@@ -16,6 +16,7 @@ struct CartaSuperTrunfo {
 	int pt0, pt1; // pt = pontos turisticos
 };
 
+// fiz esse utilizando o fgets para permitir espaços nos dados de tipo sting
 void lerCarta(struct CartaSuperTrunfo* carta) {	
 	printf("-- Cadastro da carta 1 --\n");
 	printf("Selecione uma letra de A a H: ");
