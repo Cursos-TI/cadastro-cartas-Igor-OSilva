@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <sal.h>
-#include <string.h>
+
 
 
 // Desafio Super Trunfo - Países
