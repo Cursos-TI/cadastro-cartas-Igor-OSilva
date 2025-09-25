@@ -1,15 +1,109 @@
 #include <stdio.h>
+#include <sal.h>
+#include <string.h>
+
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das cartas
 // Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
 
+struct CartaSuperTrunfo {
+	char estado0[50], estado1[50];
+	char codigo0[5], codigo1[5];
+	char cidade0[50], cidade1[50];
+	int populacao0, populacao1;
+	float area0, area1;
+	float pib0, pib1;
+	int pt0, pt1; // pt = pontos turisticos
+};
+
+void lerCarta(struct CartaSuperTrunfo* carta) {	
+	printf("-- Cadastro da carta 1 --\n");
+	printf("Selecione uma letra de A a H: ");
+	fgets(carta->estado0, 50, stdin);
+
+
+	printf("Digite o codigo do estado (EX: A01): ");
+	fgets(carta->codigo0, 5, stdin);
+
+	printf("Digite o nome da cidade: ");
+	fgets(carta->cidade0, 50, stdin);
+
+  
+	printf("Digite a populacao: ");
+	scanf_s("%d", &carta->populacao0);
+
+	printf("Digite a area (Somente numeros): ");
+	scanf_s("%f", &carta->area0);
+
+	printf("Digite o PIB (Somente numeros): ");
+	scanf_s("%f", &carta->pib0);
+
+	printf("Digite a quantidade de pontos turisticos: ");
+	scanf_s("%d", &carta->pt0);
+	while (getchar() != '\n');
+
+
+	
+}
+
+static void lerCarta2(struct CartaSuperTrunfo* carta2) {
+
+	printf("-- Cadastro da carta 2 --\n");
+	printf("Selecione uma letra de A a H: ");
+	fgets(carta2->estado1, 50, stdin);
+
+	printf("Digite o codigo do estado (EX: A01): ");
+	fgets(carta2->codigo1, 5, stdin);
+
+	printf("Digite o nome da cidade: ");
+	fgets(carta2->cidade1, 50, stdin);
+
+	printf("Digite a populacao: ");
+	scanf_s("%d", &carta2->populacao1);
+
+	printf("Digite a area (Somente numeros): ");
+	scanf_s("%f", &carta2->area1);
+
+	printf("Digite o PIB (Somente numeros): ");
+	scanf_s("%f", &carta2->pib1);
+
+	printf("Digite a quantidade de pontos turisticos: ");
+	scanf_s("%d", &carta2->pt1);
+
+}
+
 int main() {
-  // Área para definição das variáveis para armazenar as propriedades das cidades
 
-  // Área para entrada de dados
+	struct CartaSuperTrunfo carta, carta2;
 
-  // Área para exibição dos dados da cidade
+	printf("Bem vindo ao jogo Super Trunfo - Tema Paises\n");
+	printf("Insira os dados das carta:\n");	
+	lerCarta(&carta);
+	lerCarta2(&carta2);
 
-return 0;
-} 
+	printf("\n -- Carta 1 --\n");
+	printf("Estado: %s\n", carta.estado0);
+	printf("Codigo: %s\n", carta.codigo0);
+	printf("Cidade: %s\n", carta.cidade0);
+	printf("Populacao: %d\n", carta.populacao0);
+    printf("Area: %.2f KM²\n", carta.area0);
+    printf("PIB: %.2f Bilhões de reais\n", carta.pib0 );
+	printf("Pontos Turisticos: %d\n", carta.pt0);
+
+	
+	printf("\n -- Carta 2 --\n");
+	printf("Estado: %s\n", carta2.estado1);
+	printf("Codigo: %s\n", carta2.codigo1);
+	printf("Cidade: %s\n", carta2.cidade1);
+	printf("Populacao: %d\n", carta2.populacao1);
+    printf("Area: %.2f KM²\n", carta2.area1);
+    printf("PIB: %.2f Bilhões de reais\n", carta2.pib1);
+    printf("Pontos Turisticos: %d\n", carta2.pt1);
+	
+
+
+
+
+	return 0;
+}
